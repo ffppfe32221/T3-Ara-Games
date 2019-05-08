@@ -8,7 +8,7 @@ function clean(text) {
         return text;
 }
 
-const prefix = "Your Prefix";
+const prefix = "-";
 const token = "Token Your Bot";
 
 client.on("ready", () => {
@@ -58,7 +58,7 @@ if (message.content.toLowerCase().startsWith(prefix + `new`)) {
         message.channel.send(`:white_check_mark: Your ticket has been created, #${c.name}.`);
         const embed = new Discord.RichEmbed()
         .setColor(0xCF40FA)
-        .addField(`Hey ${message.author.username}!`, `Please try explain why you opened this ticket with as much detail as possible. Our **Support Team** will be here soon to help.`)
+        .addField(`Hey ${message.author.username}!`, `شكرا لك بفتح تذكره الانتظار سبورت سيتم رد عليك اقرب وقت  او اسراع وقت ممكن  `)
         .setTimestamp();
         c.send({ embed: embed });
     }).catch(console.error);
@@ -86,4 +86,5 @@ if (message.content.toLowerCase().startsWith(prefix + `close`)) {
 
 });
 
-client.login(token);
+client.login(process.env.BOT_TOKEN); 
+
